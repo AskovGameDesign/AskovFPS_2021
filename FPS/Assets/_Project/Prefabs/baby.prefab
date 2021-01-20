@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 306025032973417353}
   - component: {fileID: 6125532740600467881}
   - component: {fileID: 3084711918748210162}
-  m_Layer: 0
+  - component: {fileID: 1904641334483304087}
+  m_Layer: 10
   m_Name: baby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,11 +58,27 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113770687210823987}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.45
   m_Center: {x: 0, y: 0, z: 0.27}
+--- !u!114 &1904641334483304087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113770687210823987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 629a7c76b91648b4fa5fb19a00cb0693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  babySplat: {fileID: 5687637580987359413, guid: 2d4c1cd7f3c3ff14ebf08fb3330dedbf, type: 3}
+  damage: 10
+  explosionForce: 1000
+  range: 8
 --- !u!1 &2757563795716352379
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,7 +90,7 @@ GameObject:
   - component: {fileID: 7518093328878311268}
   - component: {fileID: 63680549391502956}
   - component: {fileID: 4155688865801600394}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayingBaby
   m_TagString: Untagged
   m_Icon: {fileID: 0}

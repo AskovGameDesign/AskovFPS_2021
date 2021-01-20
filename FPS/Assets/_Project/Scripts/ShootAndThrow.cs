@@ -18,7 +18,7 @@ public class ShootAndThrow : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightControl) && numberOfBabies > 0)
+        if (Input.GetMouseButtonDown(0) && numberOfBabies > 0)
         {
             numberOfBabies--;
             if (numberOfBabies < 0)
