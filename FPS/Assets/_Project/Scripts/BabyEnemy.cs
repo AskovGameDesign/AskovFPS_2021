@@ -5,13 +5,13 @@ using UnityEngine;
 public class BabyEnemy : MonoBehaviour, IDamageable
 {
 
-    public int health = 100;
+    public float health = 100f;
     
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
 
-        if(health <= 0)
+        if(health <= 0f)
         {
             Debug.Log("Arghhhhhhhh");
         }

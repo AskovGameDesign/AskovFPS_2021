@@ -5,13 +5,14 @@ using UnityEngine;
 public class BabyExplode : MonoBehaviour
 {
     public GameObject babySplat;
-    public int damage = 10;
+    public float maxDamage = 10f;
     public float explosionForce = 500f;
     public float range = 5f;
 
+    List<Rigidbody> rigidbodies;
     void Explosion()
     {
-        List<Rigidbody> rigidbodies = new List<Rigidbody>();
+        rigidbodies = new List<Rigidbody>();
         Collider[] colliders = Physics.OverlapSphere(transform.position, range);
 
         foreach (var coll in colliders)
@@ -24,6 +25,13 @@ public class BabyExplode : MonoBehaviour
 
         foreach (var rb in rigidbodies)
         {
+            float dist = Vector3.Distance(transform.position, rb.position);
+
+            float newDamage = Mathf.Lerp(maxDamage, 0f, dist / range);
+
+            if (rb.transform.root.GetComponent<IDamageable>() != null)
+                rb.transform.root.GetComponent<IDamageable>().TakeDamage(newDamage);
+
             rb.AddExplosionForce(explosionForce, transform.position, range, 2f);
         }
     }
@@ -34,8 +42,8 @@ public class BabyExplode : MonoBehaviour
 
         Explosion();
 
-        if(other.transform.root.GetComponent<IDamageable>() != null)
-            other.transform.root.GetComponent<IDamageable>().TakeDamage(damage);
+        //if(other.transform.root.GetComponent<IDamageable>() != null)
+          //  other.transform.root.GetComponent<IDamageable>().TakeDamage(damage);
 
         Destroy(gameObject);
     }
