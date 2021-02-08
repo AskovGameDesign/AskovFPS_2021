@@ -53,7 +53,7 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
         animator = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
 
-        animator.SetFloat("WalkOffset", Random.Range(0f, 1f));
+        //animator.SetFloat("WalkOffset", Random.Range(0f, 1f));
     }
 
     // Update is called once per frame
